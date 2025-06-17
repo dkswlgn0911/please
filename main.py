@@ -1,12 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
 import streamlit as st
 
-# Windows용 한글 폰트 설정
-font_path = "C:/Windows/Fonts/malgun.ttf"  # 윈도우 기본 한글 폰트
-fontprop = fm.FontProperties(fname=font_path).get_name()
-plt.rcParams['font.family'] = fontprop
+# 한글 폰트 설정 (리눅스 서버/Streamlit Cloud용)
+plt.rcParams['font.family'] = 'NanumGothic'
 plt.rcParams['axes.unicode_minus'] = False
 
 st.title("서울시 건축물 연면적 Top 10 자치구 시각화")
