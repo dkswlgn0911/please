@@ -1,18 +1,18 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 import streamlit as st
 
-# 한글 폰트 설정
-plt.rcParams['font.family'] = 'Malgun Gothic'
+# Windows용 한글 폰트 설정
+font_path = "C:/Windows/Fonts/malgun.ttf"  # 윈도우 기본 한글 폰트
+fontprop = fm.FontProperties(fname=font_path).get_name()
+plt.rcParams['font.family'] = fontprop
 plt.rcParams['axes.unicode_minus'] = False
 
-# 제목
-st.title("서울시 건축물 연면적 Top 10")
+st.title("서울시 건축물 연면적 Top 10 자치구 시각화")
 
-# CSV 불러오기
+# 데이터 불러오기
 df = pd.read_csv("buildings.csv", encoding="cp949").dropna()
-
-# 상위 10개 자치구 추출
 top10 = df.sort_values(by="건축물총면적 (㎡)", ascending=False).head(10)
 
 # 그래프 그리기
@@ -25,5 +25,4 @@ plt.xticks(rotation=45)
 ax.grid(axis="y", linestyle="--", alpha=0.7)
 plt.tight_layout()
 
-# Streamlit에 그래프 표시
 st.pyplot(fig)
