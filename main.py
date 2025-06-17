@@ -6,7 +6,7 @@ import streamlit as st
 st.title("🏙️ 서울시 건축물 연면적 TOP 10 자치구")
 
 # --- 데이터 불러오기 ---
-df = pd.read_csv("buildings.csv", encoding="cp949").dropna()
+df = pd.read_csv("buildings.csv", encoding="utf-8").dropna()
 
 # --- 연면적 기준 상위 10개 자치구 추출 ---
 top10 = df.sort_values(by="건축물총면적 (㎡)", ascending=False).head(10)
