@@ -2,10 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-# --- 한글 폰트 설정 (리눅스/Streamlit Cloud 호환) ---
-plt.rcParams['font.family'] = 'NanumGothic'
-plt.rcParams['axes.unicode_minus'] = False
-
 # --- 앱 제목 ---
 st.title("🏙️ 서울시 건축물 연면적 TOP 10 자치구")
 
