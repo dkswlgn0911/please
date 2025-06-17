@@ -7,7 +7,7 @@ plt.rcParams['font.family'] = 'Malgun Gothic'
 plt.rcParams['axes.unicode_minus'] = False
 
 # 제목
-st.title("서울시 건축물 연면적 Top 10 자치구 시각화")
+st.title("서울시 건축물 연면적 Top 10")
 
 # CSV 불러오기
 df = pd.read_csv("buildings.csv", encoding="cp949").dropna()
